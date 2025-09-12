@@ -1,0 +1,51 @@
+---
+ import '../styles/globals.css';
+ import '../styles/style.css';
+ import { Header } from '../components/header';
+ import { Navigation } from '../components/navigation';
+ import { HeroSection } from '../components/hero-section';
+ import { EventosSection } from '../components/eventos-section';
+ import { LocacionesSection } from '../components/locaciones-section';
+ import { VideoSection } from '../components/video-section';
+ import { ArtistasSection } from '../components/artistas-section';
+ import { HistoriasSection } from '../components/historias-section';
+ import  BlogsSection  from '../components/blogs-section';
+ import CredentialsSection from '../components/credentials-section';
+ import AboutSection from '../components/about-section';
+ import ContactForm from '../components/contact-form';
+ import Footer from '../components/footer';
+ // Comentando las importaciones problemáticas para aislar el error
+ import { GaleriasSection } from '../components/galerias-section';
+ import { PlannersSection } from '../components/planners-section';
+ import { TurismoSection } from '../components/turismo-section';
+ import { ServiciosSection } from '../components/servicios-section';
+---
+
+<html lang="en">
+  <head>
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="min-h-screen">
+      <Header />
+      <Navigation />
+      <HeroSection client:load />
+         <ServiciosSection client:load />
+      <EventosSection client:load />
+      <LocacionesSection client:load />
+      <VideoSection client:load />
+      <ArtistasSection client:load />
+      <HistoriasSection client:load />
+      <BlogsSection client:load />
+      <CredentialsSection client:load />
+      <AboutSection client:load />
+      <ContactForm client:load />
+      <Footer client:load />
+      {/* Comentando los componentes problemáticos para aislar el error */}
+      <GaleriasSection client:load />
+      <PlannersSection client:load />
+      <TurismoSection client:load />
+  
+    </div>
+  </body>
+</html>
