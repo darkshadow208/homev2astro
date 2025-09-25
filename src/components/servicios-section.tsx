@@ -9,30 +9,30 @@ import Autoplay from "embla-carousel-autoplay"
 const servicios = [
   {
     id: 1,
-    categoria: "DECORACION",
-    titulo: "Servicios",
+    categoria: "GASTRONOMIA",
+    titulo: "GASTRONOMIA",
     subtitulo: "Destacados",
     descripcion:
-      "cada evento es una oportunidad para expresar las necesidades, gustos y sentimientos de nuestros clientes a través de cada detalle, cada maravilloso espacio decorado fina y hermosamente para que vivas experiencias llenas de magia, alegría y diversión.",
-    imagen: "/elegant-event-decoration-with-flowers-and-lights.jpg",
+      "Puedes encontrar entre nuestros lugares para eventos, más que salones sociales, hoteles, fincas, haciendas, centros de convenciones y lugares campestres de gran categoría, exclusivos espacios con todos los servicios para hacer de tus eventos momentos únicos e irrepetibles.",
+    imagen: "/uploads/Tu-San-Agustin-Home_54.webp",
   },
   {
     id: 2,
-    categoria: "GASTRONOMIA",
-    titulo: "Servicios",
+    categoria: "DECORACION",
+    titulo: "DECORACION",
     subtitulo: "Destacados",
     descripcion:
-      "Creamos experiencias culinarias únicas que deleitan todos los sentidos. Nuestro equipo de chefs especializados diseña menús personalizados que reflejan el estilo y preferencias de cada evento, garantizando sabores excepcionales y presentaciones impecables.",
-    imagen: "/gourmet-catering-elegant-food-presentation.jpg",
+      "cada evento es una oportunidad para expresar las necesidades, gustos y sentimientos de nuestros clientes a través de cada detalle, cada maravilloso espacio decorado fina y hermosamente para que vivas experiencias llenas de magia, alegría y diversión",
+    imagen: "/uploads/tu-san-agustin-slider-home-008_extraLargeThumb.webp",
   },
   {
     id: 3,
     categoria: "FOTOGRAFIA",
-    titulo: "Servicios",
+    titulo: "lugares para eventos",
     subtitulo: "Destacados",
     descripcion:
-      "Capturamos cada momento especial con un enfoque artístico y profesional. Nuestros fotógrafos y videógrafos expertos documentan la esencia de tu evento, creando recuerdos visuales que perdurarán para toda la vida con la más alta calidad.",
-    imagen: "/professional-event-photography-wedding-moments.jpg",
+      "Puedes encontrar entre nuestros lugares para eventos, más que salones sociales, hoteles, fincas, haciendas, centros de convenciones y lugares campestres de gran categoría, exclusivos espacios con todos los servicios para hacer de tus eventos momentos únicos e irrepetibles.",
+    imagen: "/uploads/tu-san-agustin-slider-home-009.webp",
   },
 ]
 
@@ -47,7 +47,7 @@ const serviciosTexto = [
 
 export function ServiciosSection() {
   return (
-    <section className="bg-gray-800 py-16 relative overflow-hidden">
+    <section className=" --background py-16 relative overflow-hidden">
       <div className="absolute top-8 left-8 w-4 h-4 bg-teal-500 rounded-full opacity-60"></div>
       <div className="absolute bottom-8 right-8 w-6 h-6 bg-teal-500 rounded-full opacity-60"></div>
 
@@ -68,13 +68,13 @@ export function ServiciosSection() {
               <CarouselItem key={servicio.id}>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto">
                   <div className="w-full lg:w-1/2 max-w-md">
-                    <Card className="overflow-hidden border-0 shadow-2xl">
+                    <Card className="overflow-hidden border-5 ">
                       <div className="aspect-[4/3] relative">
                         <img
                           src={servicio.imagen || "/placeholder.svg"}
                           alt={servicio.categoria}
                           className="object-cover w-full h-full"
-                        />
+                         id="imgservicios"/>
                       </div>
                     </Card>
                   </div>
@@ -82,7 +82,7 @@ export function ServiciosSection() {
                   <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">
                     <div>
                       <h2 className="text-4xl lg:text-5xl font-light mb-2">
-                        <span className="text-teal-500">{servicio.titulo}</span>
+                        <span className="text-teal-500">SERVICIOS</span>
                       </h2>
                       <h3 className="text-4xl lg:text-5xl font-light text-white">{servicio.subtitulo}</h3>
                     </div>
@@ -90,7 +90,7 @@ export function ServiciosSection() {
                     <div className="space-y-4">
                       <h4 className="text-white font-bold text-lg tracking-wider">{servicio.categoria}</h4>
 
-                      <div className="relative">
+                      <div className="relative servicios-text">
                         <div className="absolute left-0 top-0 w-px h-full bg-gray-400 hidden lg:block"></div>
                         <p className="text-gray-300 leading-relaxed max-w-md mx-auto lg:mx-0 lg:pl-6">
                           {servicio.descripcion}
@@ -114,9 +114,9 @@ export function ServiciosSection() {
 
       <div className="mt-16 pt-8 border-t border-gray-600">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-center items-center gap-4 lg:gap-8">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-center items-center gap-4 lg:gap-8 serviciostext">
             {serviciosTexto.map((servicio, index) => (
-              <span key={index} className="text-gray-300 font-light text-lg lg:text-xl italic">
+              <span key={index} className="text-gray-300 font-light text-lg lg:text-xl ">
                 {servicio}
               </span>
             ))}

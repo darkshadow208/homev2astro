@@ -6,7 +6,7 @@ export function HistoriasSection() {
   const stories = [
     {
       id: 1,
-      image: "/laura-andres-wedding-story.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_img01.webp",
       title: "Laura & Andrés Boda",
       category: "Matrimonios",
       description:
@@ -14,7 +14,7 @@ export function HistoriasSection() {
     },
     {
       id: 2,
-      image: "/mariam-quinceanera-golden-dress.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_img02-150x150.webp",
       title: "Fiesta de 15 Años Mariam",
       category: "Fiesta de 15 años",
       description:
@@ -22,7 +22,7 @@ export function HistoriasSection() {
     },
     {
       id: 3,
-      image: "/mitsubishi-corporate-event-celebration.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_img03.webp",
       title: "Mitsubishi",
       category: "Eventos Empresariales",
       description:
@@ -33,21 +33,16 @@ export function HistoriasSection() {
   return (
     <section
       className="py-16 px-4 relative"
-      style={{
-        backgroundImage: "url('/historias-background.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      
     >
       {/* Background overlay for better text readability */}
-      <div className="absolute inset-0 bg-stone-200/80"></div>
+      <div className="absolute inset-0 " id="historiasbg"></div>
 
       <div className="container mx-auto relative z-10">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif">
-            <span className="text-teal-600">Historias</span> <span className="text-gray-800">de Eventos Reales</span>
+          <h2 className="text-4xl md:text-5xl font-serif main-title ">
+            <span className="highlight">Historias</span> <span className="text-gray-800">de Eventos Reales</span>
           </h2>
         </div>
 
@@ -68,7 +63,7 @@ export function HistoriasSection() {
                 </div>
 
                 {/* Card */}
-                <Card className="bg-white rounded-3xl p-6 pt-20 shadow-lg max-w-sm w-full mb-4 relative z-10">
+                <Card className="bg-white rounded-3xl p-6 pt-20 shadow-lg   mb-4 relative z-10 historiascard">
                   {/* Story Description */}
                   <p className="text-gray-600 text-sm leading-relaxed text-center mb-6">{story.description}</p>
 
@@ -85,8 +80,11 @@ export function HistoriasSection() {
               </div>
 
               {/* Category Link */}
-              <div className="text-gray-600 text-sm">
-                {story.category} <span className="ml-1">›</span>
+              <div className="category-link">
+               
+               <a href="http://">{story.category}  <span className="">›</span></a>
+               
+               
               </div>
             </div>
           ))}
@@ -94,7 +92,7 @@ export function HistoriasSection() {
 
         {/* Bottom Button */}
         <div className="flex justify-center">
-          <button className="bg-gray-700 hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-full flex items-center gap-2 transition-colors">
+          <button className="btn-testimonials">
             Ver testimonios
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (

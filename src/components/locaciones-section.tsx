@@ -28,17 +28,17 @@ export function LocacionesSection() {
   const locaciones = [
     {
       nombre: "Medellín",
-      imagen: "/elegant-outdoor-event-venue-in-medellin-with-golde.jpg",
+      imagen: "/uploads/Tu-San-Agustin-Home_08.webp",
       enlace: "Ver ciudades",
     },
     {
       nombre: "Rionegro",
-      imagen: "/elegant-indoor-venue-in-rionegro-with-wooden-ceili.jpg",
+      imagen: "/uploads/Tu-San-Agustin-Home_10.webp",
       enlace: "Ver todos los destinos",
     },
     {
       nombre: "Envigado",
-      imagen: "/envigado-venue-elegant.png",
+      imagen: "/uploads/Tu-San-Agustin-Home_05.webp",
       enlace: "Ver países",
     },
   ]
@@ -46,7 +46,7 @@ export function LocacionesSection() {
   const duplicatedLocaciones = [...locaciones, ...locaciones, ...locaciones]
 
   return (
-    <section className="bg-gray-800 py-16 px-4">
+    <section className=" --background py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Título */}
         <div className="text-center mb-12">
@@ -55,7 +55,7 @@ export function LocacionesSection() {
           </h2>
         </div>
 
-        <div className="mb-12 px-4 md:px-8 lg:px-12">
+        <div className="mb-12 px-4 " id="locacionescarousel">
           <Carousel
             setApi={(carouselApi) => {
               api.current = carouselApi
@@ -72,23 +72,27 @@ export function LocacionesSection() {
             <CarouselContent className="-ml-2 md:-ml-4">
               {duplicatedLocaciones.map((locacion, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/2 xl:basis-1/3">
-                  <div className="flex flex-col items-center">
-                    <Card className="overflow-hidden border-0 shadow-lg mb-4 w-full max-w-xs bg-transparent">
-                      <div className="relative">
-                        <img
-                          src={locacion.imagen || "/placeholder.svg"}
-                          alt={`Venue en ${locacion.nombre}`}
-                          className="w-full h-96 object-cover rounded-lg"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-black/75 backdrop-blur-sm rounded-b-lg">
-                          <div className="px-6 py-4">
-                            <h3 className="text-white text-xl font-bold tracking-wide text-center">
-                              {locacion.nombre}
-                            </h3>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
+                  <div className="flex flex-col items-center flex-wrap justify-center gap-6">
+                     <Card
+      key={index}
+      className="overflow-hidden rounded-3xl border-0 shadow-lg bg-transparent w-full max-w-[250px] !py-0 gap-0"
+    >
+      <div className="relative">
+        <img
+          src={locacion.imagen || "/placeholder.svg"}
+          alt={`Venue en ${locacion.nombre}`}
+          className="w-full h-86 object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-x-0 bottom-3 flex justify-center pointer-events-none">
+          <div className="px-4 py-1.5 rounded-full bg-neutral-900/85 text-white shadow-md ring-1 ring-white/10">
+            <h3 className="text-sm font-medium leading-none tracking-wide text-center">
+              {locacion.nombre}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </Card>
 
                     {/* Enlace debajo de cada tarjeta */}
                     <button className="text-white hover:text-teal-400 transition-colors duration-200 flex items-center gap-2 group">

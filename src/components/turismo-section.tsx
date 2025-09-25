@@ -15,7 +15,7 @@ export function TurismoSection() {
           <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-[300px_300px] gap-0">
             <article className="relative w-full h-full overflow-hidden lg:col-start-1 lg:row-start-1">
               <img
-                src="/elegant-quincea-era-celebration-with-beautiful-dre.jpg"
+                src="/uploads/Tu-San-Agustin-Home_38.webp"
                 alt="Crucero para lunas de miel"
                 className="w-full h-full object-cover"
               />
@@ -48,7 +48,7 @@ export function TurismoSection() {
 
             <article className="relative w-full h-full overflow-hidden lg:col-start-3 lg:row-start-1 lg:row-span-2 min-h-[260px] lg:min-h-0">
               <img
-                src="/quincea-era-celebration-with-blue-dress-in-garden-.jpg"
+                src="/uploads/Tu-San-Agustin-Home_47.webp"
                 alt="Destinos nacionales e internacionales"
                 className="w-full h-full object-cover"
               />
@@ -59,7 +59,7 @@ export function TurismoSection() {
 
             <article className="relative w-full h-full overflow-hidden lg:col-start-1 lg:row-start-2">
               <img
-                src="/beautiful-quincea-era-party-setup-with-pink-decora.jpg"
+                src="/uploads/Tu-San-Agustin-Home_43.webp"
                 alt="Excursiones de 15 años"
                 className="w-full h-full object-cover"
               />

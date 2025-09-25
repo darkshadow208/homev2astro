@@ -30,15 +30,15 @@ export function GaleriasSection() {
 
   const galleries = [
     {
-      image: "/quinceanera-red-dress-white-horse.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_30.webp",
       label: "Fiesta de 15 años",
     },
     {
-      image: "/celebration-sparklers-party.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_32.webp",
       label: "Celebraciones",
     },
     {
-      image: "/wedding-couple-floral-arch.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_34.webp",
       label: "Event & Wedding Planner",
     },
   ]
@@ -46,7 +46,7 @@ export function GaleriasSection() {
   const duplicatedGalleries = [...galleries, ...galleries, ...galleries]
 
   return (
-    <section className="py-16 bg-gray-800">
+    <section className="py-16 --background">
       <div className="container mx-auto px-4">
         {/* Title */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
@@ -68,24 +68,31 @@ export function GaleriasSection() {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {duplicatedGalleries.map((gallery, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="relative">
-                    <div className="relative w-[280px] h-[415px] rounded-2xl overflow-hidden mx-auto">
-                      <img
-                        src={gallery.image || "/placeholder.svg"}
-                        alt={gallery.label || `Gallery image ${index + 1}`}
-                        className="object-cover w-full h-full"
-                      />
-                      {gallery.label && (
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="bg-black/60 backdrop-blur-sm rounded-lg px-4 py-2">
-                            <p className="text-white text-sm font-medium text-center">{gallery.label}</p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </CarouselItem>
+              <CarouselItem
+  key={index}
+  className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+>
+  <div className="relative w-[280px] h-[415px] rounded-2xl overflow-hidden mx-auto">
+    {/* Imagen */}
+    <img
+      src={gallery.image || "/placeholder.svg"}
+      alt={gallery.label || `Gallery image ${index + 1}`}
+      className="object-cover w-full h-full"
+    />
+
+    {/* Overlay tipo botón alargado */}
+    {gallery.label && (
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2">
+        <div className="bg-white/80 backdrop-blur-sm rounded-full px-8 py-2 shadow-md min-w-[180px] flex justify-center">
+          <p className="text-gray-900 text-sm font-medium text-center truncate">
+            {gallery.label}
+          </p>
+        </div>
+      </div>
+    )}
+  </div>
+</CarouselItem>
+
               ))}
             </CarouselContent>
             <CarouselPrevious className="left-2 md:left-4 lg:-left-8 w-12 h-12 bg-white/90 hover:bg-white border-0" />

@@ -1,201 +1,121 @@
-import Link from "next/link"
-import { Instagram, MessageCircle, Facebook, Youtube, Linkedin, Phone, Mail } from "lucide-react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faFacebook,
+  faWhatsapp,
+  faPinterest,
+  faYoutube,
+  faLinkedin,
+  // faTiktok,   // ← añade estos dos SOLO si tu paquete está actualizado
+  // faFlickr,
+} from "@fortawesome/free-brands-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-700 text-white">
-      {/* Main footer content */}
+    <footer className="text-white" id="bgfooter">
       <div className="px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {/* Logo and social media */}
+          {/* Logo + redes */}
           <div className="space-y-6">
-            <div className="bg-teal-500 rounded-full px-6 py-3 inline-block">
-              <span className="text-white font-bold text-xl italic">San Agustín</span>
+            <div className="px-6 py-3 inline-block">
+              <img src="uploads/Tu-San-Agustin_Logo_verde-300x156.webp" alt="San Agustín" />
             </div>
-            <p className="text-gray-300">Síguenos @tusanagustin</p>
+            <p className="text-gray-300 tpfo">Síguenos @tusanagustin</p>
             <div className="flex flex-wrap gap-3">
-              <Instagram className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
-              <MessageCircle className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
-              <Facebook className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
-              <div className="w-6 h-6 bg-gray-300 rounded hover:bg-teal-400 cursor-pointer"></div> {/* Pinterest */}
-              <div className="w-6 h-6 bg-gray-300 rounded hover:bg-teal-400 cursor-pointer"></div> {/* TikTok */}
-              <Youtube className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
-              <Linkedin className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
-              <div className="w-6 h-6 bg-gray-300 rounded hover:bg-teal-400 cursor-pointer"></div> {/* Flickr */}
+              <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
+              <FontAwesomeIcon icon={faWhatsapp} className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
+              <FontAwesomeIcon icon={faFacebook} className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
+              <FontAwesomeIcon icon={faPinterest} className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
+              {/* <FontAwesomeIcon icon={faTiktok} className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" /> */}
+              <FontAwesomeIcon icon={faYoutube} className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
+              <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" />
+              {/* <FontAwesomeIcon icon={faFlickr} className="w-6 h-6 text-gray-300 hover:text-teal-400 cursor-pointer" /> */}
             </div>
           </div>
 
-          {/* Navigation links */}
+          {/* Navegación */}
           <div className="space-y-4">
             <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Inicio
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Eventos
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Servicios
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Galerías
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Lugares
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Planners
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Artistas
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Historias
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Blogs
-                </Link>
-              </li>
+              {["Inicio","Eventos","Servicios","Galerías","Lugares","Planners","Artistas","Historias","Blogs"].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-300 hover:text-teal-400">• {item}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Legal and contact links */}
+          {/* Legal */}
           <div className="space-y-4">
             <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Contáctanos
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Sobre nosotros
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Preguntas frecuentes
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Condiciones legales
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Políticas de privacidad
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Consentimiento de cookies
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Mapa del sitio
-                </Link>
-              </li>
+              {[
+                "Contáctanos",
+                "Sobre nosotros",
+                "Preguntas frecuentes",
+                "Condiciones legales",
+                "Políticas de privacidad",
+                "Consentimiento de cookies",
+                "Mapa del sitio",
+              ].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-300 hover:text-teal-400">• {item}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Work with us */}
+          {/* Trabaja con nosotros */}
           <div className="space-y-4">
             <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • ¡Trabaja con nosotros!
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Events & Wedding Planners
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Artistas y espectáculos
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Lugares para Eventos
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-teal-400">
-                  • Proveedores
-                </Link>
-              </li>
+              {[
+                "¡Trabaja con nosotros!",
+                "Events & Wedding Planners",
+                "Artistas y espectáculos",
+                "Lugares para Eventos",
+                "Proveedores",
+              ].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-300 hover:text-teal-400">• {item}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Contact and payment methods */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-600">
-          {/* Contact info */}
+        {/* Contacto + medios de pago */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto mt-12 pt-8">
           <div className="space-y-4">
             <h3 className="text-teal-400 font-semibold text-lg">Contáctanos</h3>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-teal-400" />
+                <FontAwesomeIcon icon={faPhone} className="w-4 h-4 text-teal-400" />
                 <span className="text-gray-300">(+57) 316 875 33 05</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-teal-400" />
+                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 text-teal-400" />
                 <span className="text-gray-300">contacto@tusanagustin.com</span>
               </div>
             </div>
           </div>
 
-          {/* Payment methods */}
           <div className="space-y-4">
             <h3 className="text-teal-400 font-semibold text-lg">Medios de pago</h3>
-            <div className="flex flex-wrap gap-4 items-center">
-              <div className="bg-white rounded px-3 py-2">
-                <span className="text-gray-800 font-bold text-sm">MasterCard</span>
-              </div>
-              <div className="bg-white rounded px-3 py-2">
-                <span className="text-blue-800 font-bold text-sm">VISA</span>
-              </div>
-              <div className="bg-white rounded px-3 py-2">
-                <span className="text-blue-600 font-bold text-sm">PayPal</span>
-              </div>
-              <div className="bg-white rounded px-3 py-2">
-                <span className="text-gray-800 font-bold text-sm">PSE</span>
-              </div>
-              <div className="bg-white rounded px-3 py-2">
-                <span className="text-teal-600 font-bold text-sm">Wompi</span>
-              </div>
+            <div className="flex flex-wrap items-center gap-6">
+              <img className="h-8 object-contain" src="uploads/Tu-San-Agustin_Home_medios-de-pago-_08.webp" alt="Visa" />
+              <img className="h-8 object-contain" src="uploads/Tu-San-Agustin_Home_medios-de-pago-_07.webp" alt="MasterCard" />
+              <img className="h-8 object-contain" src="uploads/Tu-San-Agustin_Home_medios-de-pago-_09.webp" alt="PayPal" />
+              <img className="h-8 object-contain" src="uploads/Tu-San-Agustin_Home_medios-de-pago-_10.webp" alt="PSE" />
+              <img className="h-8 object-contain" src="uploads/Tu-San-Agustin_Home_medios-de-pago-_11.webp" alt="Wompi" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="bg-gray-800 py-4">
+      <div className="py-4" id="bgcopy">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-gray-400 text-sm">Copyright © 1988 - 2025 Tu San Agustín</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

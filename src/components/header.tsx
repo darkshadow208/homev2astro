@@ -1,49 +1,111 @@
-import { Phone, Facebook, Instagram, Music, MapPin, Linkedin, Youtube, Plus, MessageCircle } from "lucide-react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faInstagram,
+  faTiktok,
+  faPinterestP,
+  faLinkedinIn,
+  faYoutube,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+
+import { useState } from "react";
+
+
+
+
+
+
+
 
 export function Header() {
+ 
+ const [lang, setLang] = useState<"ES" | "EN">("ES");
+
+  const toggleLang = () => {
+    setLang((prev) => (prev === "ES" ? "EN" : "ES"));
+  };
+ 
+ 
   return (
-    <div className="bg-teal-600 text-white py-2 px-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-center text-sm">
-        <div className="flex items-center gap-2 md:gap-6">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-6 md:w-12 md:h-8 bg-white rounded-full flex items-center justify-center">
-              <span className="text-teal-600 font-bold text-xs md:text-sm italic">Bella</span>
-            </div>
-          </div>
+   <header className="bg-teal-500 text-white py-4" id="header">
+  <div className="h-12 px-4">
+    <div className="max-w-7xl mx-auto h-full flex items-center justify-center gap-x-6">
+      {/* Logo */}
+      <div className="flex items-center">
+        <img
+          src="uploads/Tu-San-Agustin_Logo.webp"
+          alt="San Agustín"
+          className="h-7 w-auto"
+        />
+      </div>
 
-          {/* Phone - Hidden on mobile */}
-          <div className="hidden sm:flex items-center gap-2">
-            <span>Llámanos:</span>
-            <Phone className="w-4 h-4" />
-            <span className="font-medium">(+57) 316 875 33 05</span>
-          </div>
+      {/* Teléfono */}
+      <div className="hidden sm:flex items-center gap-2 text-[17.5px]">
+        <span className="font-medium">Llámanos:</span>
+        <FontAwesomeIcon icon={faPhone} className="text-[16px]" />
+        <span className="">
+          (+57) 316 875 33 05
+        </span>
+      </div>
 
-          {/* Social Icons - Reduced on mobile */}
-          <div className="flex items-center gap-1 md:gap-3">
-            <Facebook className="w-3 h-3 md:w-4 md:h-4 hover:opacity-80 cursor-pointer" />
-            <Instagram className="w-3 h-3 md:w-4 md:h-4 hover:opacity-80 cursor-pointer" />
-            <div className="hidden sm:flex items-center gap-1 md:gap-3">
-              <Music className="w-4 h-4 hover:opacity-80 cursor-pointer" />
-              <MapPin className="w-4 h-4 hover:opacity-80 cursor-pointer" />
-              <Linkedin className="w-4 h-4 hover:opacity-80 cursor-pointer" />
-              <Youtube className="w-4 h-4 hover:opacity-80 cursor-pointer" />
-              <Plus className="w-4 h-4 hover:opacity-80 cursor-pointer" />
-            </div>
-            <MessageCircle className="w-3 h-3 md:w-4 md:h-4 hover:opacity-80 cursor-pointer" />
-          </div>
+      {/* Íconos sociales + bandera TODO JUNTO */}
+      <div className="flex items-center gap-4">
+        <FontAwesomeIcon icon={faFacebookF} className="text-[18px] hover:opacity-90 cursor-pointer" />
+        <FontAwesomeIcon icon={faInstagram} className="text-[18px] hover:opacity-90 cursor-pointer" />
+        <FontAwesomeIcon icon={faTiktok} className="text-[18px] hover:opacity-90 cursor-pointer" />
+        <FontAwesomeIcon icon={faPinterestP} className="text-[18px] hover:opacity-90 cursor-pointer" />
+        <FontAwesomeIcon icon={faLinkedinIn} className="text-[18px] hover:opacity-90 cursor-pointer" />
+        <FontAwesomeIcon icon={faYoutube} className="text-[18px] hover:opacity-90 cursor-pointer" />
 
-          {/* Flag and Language */}
-          <div className="flex items-center gap-1 md:gap-2">
-            <div className="w-5 h-3 md:w-6 md:h-4 rounded-sm overflow-hidden flex flex-col">
-              <div className="w-full h-1 md:h-2 bg-yellow-400"></div>
-              <div className="w-full h-1 bg-blue-600"></div>
-              <div className="w-full h-1 bg-red-600"></div>
-            </div>
-            <span className="text-xs font-medium">ES</span>
-          </div>
-        </div>
+        {/* Placeholders */}
+       
+
+        {/* WhatsApp */}
+        <span className="inline-flex items-center justify-center w-7 h-7 ">
+          <FontAwesomeIcon icon={faWhatsapp} className="text-[16px]" />
+        </span>
+
+        {/* Bandera */}
+         <button
+            onClick={toggleLang}
+            className="flex items-center gap-2 focus:outline-none"
+          >
+            {lang === "ES" ? (
+              // Bandera Colombia
+              <div className="w-7 h-7 rounded-full overflow-hidden flex flex-col ring-2 ring-white/70">
+                <div className="flex-1 bg-yellow-400" />
+                <div className="flex-1 bg-blue-600" />
+                <div className="flex-1 bg-red-600" />
+              </div>
+            ) : (
+              // Bandera Estados Unidos
+              <div className="w-7 h-7 rounded-full overflow-hidden ring-2 ring-white/70">
+                <div className="w-full h-1/2 bg-blue-700 relative flex flex-wrap">
+                  {/* Estrellas blancas */}
+                  <div className="w-full flex flex-wrap text-[6px] text-white leading-none">
+                    ★ ★ ★ ★ ★
+                  </div>
+                </div>
+                <div className="w-full h-1/2">
+                  <div className="h-1 bg-red-600" />
+                  <div className="h-1 bg-white" />
+                  <div className="h-1 bg-red-600" />
+                  <div className="h-1 bg-white" />
+                </div>
+              </div>
+            )}
+
+            <span className="text-sm font-semibold">
+              {lang === "ES" ? "ES" : "EN"}
+            </span>
+          </button>
       </div>
     </div>
-  )
+  </div>
+</header>
+
+  );
 }
+

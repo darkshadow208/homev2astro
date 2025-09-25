@@ -99,13 +99,8 @@ export default function ContactForm() {
           </Button>
 
           {/* Wompi payment button */}
-          <div className="flex justify-start">
-            <Button
-              type="button"
-              className="bg-teal-500 hover:bg-teal-600 text-white font-medium px-8 py-3 rounded-lg transition-colors"
-            >
-              Paga con <span className="font-bold ml-1">Wompi</span>
-            </Button>
+          <div className="flex justify-start w-20">
+        <img src="uploads/Home-Tu-San-Agustin-pago-wompi.webp" alt="" />
           </div>
         </form>
       </div>

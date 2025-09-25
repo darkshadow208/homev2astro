@@ -10,15 +10,17 @@ export function Navigation() {
 
   return (
     <>
-      <nav className="bg-white shadow-sm py-4 px-4 relative z-30">
+      <nav className="bg-white shadow-sm py-8 px-4 relative z-30 " >
         <div className="max-w-7xl mx-auto">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center gap-8">
+          <div className="hidden md:flex items-center justify-center gap-8" id="navbar">
             {navItems.map((item) => (
-              <a key={item} href="#" className="text-gray-600 hover:text-gray-900 transition-colors font-medium">
+              <a key={item} href="#" className=" hover:text-gray-900 transition-colors ">
                 {item}
               </a>
             ))}
+          
+          <a class="nav-link btn-contacto" href="https://api.whatsapp.com/send/?phone=573168753305&amp;text=Hola%21&amp;type=phone_number&amp;app_absent=0">Contacto</a>
           </div>
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center justify-between">
@@ -38,7 +40,7 @@ export function Navigation() {
             </Button>
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <a key={item} href="#" className="text-gray-600 hover:text-gray-900 transition-colors font-medium">
+                <a key={item} href="#" className="hover:text-gray-900 transition-colors ">
                   {item}
                 </a>
               ))}

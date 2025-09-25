@@ -14,15 +14,15 @@ import {
 const originalArtists = [
   {
     name: "Maluma",
-    image: "/maluma-singing-with-microphone-tattoos.jpg",
+    image: "/uploads/Tu-San-Agustin-Home_24.webp",
   },
   {
     name: "Karol G",
-    image: "/karol-g-red-pink-hair-singing-microphone.jpg",
+    image: "/uploads/Tu-San-Agustin-Home_18.webp",
   },
   {
     name: "J Balvin",
-    image: "/j-balvin-bald-white-outfit-singing-microphone.jpg",
+    image: "/uploads/Tu-San-Agustin-Home_21.webp",
   },
 ]
 
@@ -44,8 +44,8 @@ export function ArtistasSection() {
   }, [])
 
   return (
-    <section className="py-20 bg-gray-800">
-      <div className="container mx-auto px-4">
+    <section className="carouselartistas --background-alt">
+      <div className="container mx-auto px-4 ">
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -105,14 +105,14 @@ export function ArtistasSection() {
             </CarouselContent>
 
             {/* Navigation Arrows */}
-            <CarouselPrevious className="left-2 md:left-4 lg:-left-8 bg-white hover:bg-gray-100 text-gray-800 border-0 w-12 h-12 shadow-lg" />
-            <CarouselNext className="right-2 md:right-4 lg:-right-8 bg-white hover:bg-gray-100 text-gray-800 border-0 w-12 h-12 shadow-lg" />
+            <CarouselPrevious className="left-2 md:left-4 lg:-left-8 bg-white hover:bg-gray-100  border-0 w-12 h-12 shadow-lg" />
+            <CarouselNext className="right-2 md:right-4 lg:-right-8 bg-white hover:bg-gray-100  border-0 w-12 h-12 shadow-lg" />
           </Carousel>
         </div>
 
         {/* Categories */}
-        <div className="border-t border-gray-600 pt-8">
-          <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 text-white">
+        <div className="border-t border-gray-600 pt-8 ">
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 text-white serviciostext">
             {categories.map((category, index) => (
               <span
                 key={index}
@@ -126,10 +126,10 @@ export function ArtistasSection() {
         <div className="border-b border-gray-600 pb-8 mb-12"></div>
 
         {/* Bottom Button */}
-        <div className="text-center px-4">
+        <div className="text-center px-4 ">
           <Button
             variant="outline"
-            className="bg-white hover:bg-gray-100 text-gray-800 border-white px-4 md:px-8 py-3 rounded-full text-sm md:text-lg font-medium w-full max-w-md mx-auto"
+            className="bg-white hover:bg-gray-100  border-white px-4 md:px-8 py-3 rounded-full text-sm md:text-lg font-medium w-full max-w-md mx-auto"
           >
             Ingresa a la sección de Artistas y Espectáculos
           </Button>

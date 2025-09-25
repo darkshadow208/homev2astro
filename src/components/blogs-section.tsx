@@ -16,19 +16,19 @@ import { FaWhatsapp, FaRegEnvelope } from "react-icons/fa6"
 
 const blogPosts = [
   {
-    image: "/beach-wedding-ceremony-with-ocean-view.jpg",
+    image: "/uploads/Tu-San-Agustin-Home_47.webp",
     category: "Bodas destino",
-    title: "El Destino Perfecto para tu Boda de Ensueño",
-  },
-  {
-    image: "/elegant-event-venue-with-rustic-decoration.jpg",
-    category: "Mejores lugares para eventos",
-    title: "¡Descubre los 20 Mejores Lugares para Eventos en Medellín!",
-  },
-  {
-    image: "/professional-chefs-in-white-uniforms-in-kitchen.jpg",
-    category: "Alimentación hospitalaria",
     title: "Alimentación Hospitalaria: Un Pilar Fundamental en la Recuperación y Bienestar del Paciente",
+  },
+  {
+    image: "/uploads/Tu-San-Agustin-Home_50.webp",
+    category: "Mejores lugares para eventos",
+    title: "El destino perfecto para tu boda de ensueño",
+  },
+  {
+    image: "/uploads/Tu-San-Agustin-Home_53.webp",
+    category: "Alimentación hospitalaria",
+    title: "¡Descubre los 20 Mejores Lugares para Eventos en Medellín!",
   },
 ]
 
@@ -97,7 +97,7 @@ export default function BlogsSection() {
                         <p className="text-[#333638] text-lg leading-tight mb-4 flex-grow">{post.title}</p>
                         <Button
                           variant="default"
-                          className="lowercase rounded-[10px] bg-[#4eac9f] hover:bg-[#429387] text-white"
+                          className="btnblogs"
                         >
                           Ver más
                         </Button>
@@ -114,7 +114,7 @@ export default function BlogsSection() {
 
         <div className="row mt-12 mb-8">
           <div className="col w-full">
-            <h2 className="text-center text-4xl lg:text-5xl font-['Alice'] text-[#333638]">
+            <h2 className="text-center descubremas">
               Descubre más de <br />
               <span className="text-[#4eac9f] font-bold">Tu San Agustín</span>
             </h2>
@@ -124,7 +124,7 @@ export default function BlogsSection() {
         <div className="row-collapse news-row flex flex-wrap items-center max-w-4xl mx-auto">
           <div className="w-full lg:w-5/12">
             <div className="col-inner">
-              <p className="text-[#333638] text-2xl font-['Alice'] flex items-center justify-center lg:justify-start gap-4">
+              <p className="text-[#333638] text-3xl flex items-center justify-center lg:justify-start gap-4 btnboletin">
                 Suscríbete al boletín
                 <span className="text-[#4eac9f] flex items-center gap-2">
                   <FaWhatsapp className="text-3xl" />

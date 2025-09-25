@@ -28,17 +28,17 @@ export function PlannersSection() {
   const planners = [
     {
       id: 1,
-      image: "/planner-woman-blonde.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_planner1.webp",
       alt: "Planner mujer rubia",
     },
     {
       id: 2,
-      image: "/planner-man-suit.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_planner2.webp",
       alt: "Planner hombre traje",
     },
     {
       id: 3,
-      image: "/planner-young-man.jpg",
+      image: "/uploads/Tu-San-Agustin-Home_planner3.webp",
       alt: "Planner hombre joven",
     },
   ]
@@ -99,7 +99,7 @@ export function PlannersSection() {
                     <div className="w-px h-8 bg-teal-400 mb-4"></div>
 
                     {/* Ver más Button */}
-                    <div className="bg-teal-400 hover:bg-teal-500 text-black font-medium px-6 py-2 rounded-full cursor-pointer transition-colors">
+                    <div className="bgbuttom hover:bg-teal-500 text-white font-medium px-6 py-2 rounded-full cursor-pointer transition-colors">
                       Ver más
                     </div>
                   </div>
@@ -118,7 +118,7 @@ export function PlannersSection() {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="bg-gray-800 text-white px-6 py-3 rounded-full text-sm font-medium cursor-pointer hover:bg-gray-700 transition-colors"
+              className="btnplanners"
             >
               {category}
             </div>
