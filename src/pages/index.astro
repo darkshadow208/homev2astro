@@ -2,23 +2,23 @@
 import '../styles/globals.css';
 import '../styles/style.css';
 import '../styles/fontawesome.css';
-import { Header } from '../components/header';
-import { Navigation } from '../components/navigation';
+import  Header  from '../components/header.astro';
+import Navigation  from '../components/navigation';
 import { HeroSection } from '../components/hero-section';
-import { EventosSection } from '../components/eventos-section';
-import { ServiciosSection } from '../components/servicios-section';
-import { LocacionesSection } from '../components/locaciones-section';
-import { VideoSection } from '../components/video-section';
-import { ArtistasSection } from '../components/artistas-section';
-import { HistoriasSection } from '../components/historias-section';
-import { GaleriasSection } from '../components/galerias-section';
-import { PlannersSection } from '../components/planners-section';
-import { TurismoSection } from '../components/turismo-section';
+import  EventosSection  from '../components/eventos-section';
+import  ServiciosSection  from '../components/servicios-section';
+import  LocacionesSection  from '../components/locaciones-section';
+import  VideoSection  from '../components/video-section.astro';
+import  ArtistasSection  from '../components/artistas-section.astro';
+import  HistoriasSection  from '../components/historias-section.astro';
+import  GaleriasSection  from '../components/galerias-section';
+import  PlannersSection from '../components/planners-section';
+import  TurismoSection  from '../components/turismo-section.astro';
 import BlogsSection from '../components/blogs-section';
-import CredentialsSection from '../components/credentials-section';
+import CredentialsSection from '../components/credentials-section.astro';
 import AboutSection from '../components/about-section';
 import ContactForm from '../components/contact-form';
-import Footer from '../components/footer';
+import Footer from '../components/footer.astro';
 
 ---
 
@@ -27,30 +27,31 @@ import Footer from '../components/footer';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tu San Agustin</title>
-    <!-- FontAwesome y  etilos ya stiimlortan arryba víaESM;evitadupcaddnpado--
 
+<link rel="stylesheet" href="../../public/fontawesome/fontawesome-free-6.7.2-web/css/all.min.css">
 
-<!-- También puedes incluir otros CSS desde public si los tienes -->
+<link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="../styles/globals.css">
   </head>
   <body>
     <div class="min-h-screen">
-      <Header client:load />
-      <Navigation client:load />
-      <HeroSection client:load />
-      <EventosSection client:load />
-      <ServiciosSection client:load />
-      <LocacionesSection client:load />
-      <VideoSection client:load />
-      <ArtistasSection client:load />
-      <HistoriasSection client:load />
-      <GaleriasSection client:load />
-      <PlannersSection client:load />
-      <TurismoSection client:load />
-      <BlogsSection client:load />
-      <CredentialsSection client:load />
-      <AboutSection client:load />
-      <ContactForm client:load />
-      <Footer client:load />
+      <Header  />
+      <Navigation />
+      <HeroSection client:visible />
+      <EventosSection client:visible />
+      <ServiciosSection client:visible />
+      <LocacionesSection client:visible />
+      <VideoSection client:visible />
+      <ArtistasSection client:visible />
+      <HistoriasSection client:visible />
+      <GaleriasSection client:visible />
+      <PlannersSection client:visible />
+      <TurismoSection client:visible />
+      <BlogsSection client:visible />
+      <CredentialsSection client:visible />
+      <AboutSection client:visible />
+      <ContactForm client:visible />
+      <Footer client:visible />
     </div>
   </body>
 </html>

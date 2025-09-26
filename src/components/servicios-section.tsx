@@ -1,10 +1,15 @@
-"use client"
+"use client";
 
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
-// Reemplazo de next/image por img estándar para compatibilidad con Astro
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const servicios = [
   {
@@ -34,7 +39,7 @@ const servicios = [
       "Puedes encontrar entre nuestros lugares para eventos, más que salones sociales, hoteles, fincas, haciendas, centros de convenciones y lugares campestres de gran categoría, exclusivos espacios con todos los servicios para hacer de tus eventos momentos únicos e irrepetibles.",
     imagen: "/uploads/tu-san-agustin-slider-home-009.webp",
   },
-]
+];
 
 const serviciosTexto = [
   "Gastronomía",
@@ -43,38 +48,34 @@ const serviciosTexto = [
   "Wedding Planner",
   "Fotografía y Video",
   "Alquiler de mobiliario",
-]
+];
 
-export function ServiciosSection() {
+function ServiciosSection() {
   return (
-    <section className=" --background py-16 relative overflow-hidden">
-      <div className="absolute top-8 left-8 w-4 h-4 bg-teal-500 rounded-full opacity-60"></div>
-      <div className="absolute bottom-8 right-8 w-6 h-6 bg-teal-500 rounded-full opacity-60"></div>
+    <section className="--background py-16 relative overflow-hidden">
+      <div className="absolute top-8 left-8 w-4 h-4 bg-teal-500 rounded-full opacity-60" />
+      <div className="absolute bottom-8 right-8 w-6 h-6 bg-teal-500 rounded-full opacity-60" />
 
       <div className="container mx-auto px-4">
         <Carousel
-          opts={{
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 5000,
-            }),
-          ]}
           className="w-full"
+          opts={{ loop: true }}
+          plugins={[Autoplay({ delay: 5000 })]}
         >
           <CarouselContent>
             {servicios.map((servicio) => (
               <CarouselItem key={servicio.id}>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto">
                   <div className="w-full lg:w-1/2 max-w-md">
-                    <Card className="overflow-hidden border-5 ">
+                    <Card className="overflow-hidden">
                       <div className="aspect-[4/3] relative">
                         <img
                           src={servicio.imagen || "/placeholder.svg"}
                           alt={servicio.categoria}
                           className="object-cover w-full h-full"
-                         id="imgservicios"/>
+                          id="imgservicios"
+                          loading="lazy"
+                        />
                       </div>
                     </Card>
                   </div>
@@ -84,14 +85,18 @@ export function ServiciosSection() {
                       <h2 className="text-4xl lg:text-5xl font-light mb-2">
                         <span className="text-teal-500">SERVICIOS</span>
                       </h2>
-                      <h3 className="text-4xl lg:text-5xl font-light text-white">{servicio.subtitulo}</h3>
+                      <h3 className="text-4xl lg:text-5xl font-light text-white">
+                        {servicio.subtitulo}
+                      </h3>
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className="text-white font-bold text-lg tracking-wider">{servicio.categoria}</h4>
+                      <h4 className="text-white font-bold text-lg tracking-wider">
+                        {servicio.categoria}
+                      </h4>
 
                       <div className="relative servicios-text">
-                        <div className="absolute left-0 top-0 w-px h-full bg-gray-400 hidden lg:block"></div>
+                        <div className="absolute left-0 top-0 w-px h-full bg-gray-400 hidden lg:block" />
                         <p className="text-gray-300 leading-relaxed max-w-md mx-auto lg:mx-0 lg:pl-6">
                           {servicio.descripcion}
                         </p>
@@ -112,18 +117,20 @@ export function ServiciosSection() {
         </Carousel>
       </div>
 
-      <div className="mt-16 pt-8 border-t border-gray-600">
+      <div className="mt-16 pt-8 home-s3a ">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-center items-center gap-4 lg:gap-8 serviciostext">
             {serviciosTexto.map((servicio, index) => (
-              <span key={index} className="text-gray-300 font-light text-lg lg:text-xl ">
+              <span key={index} className="text-gray-300 font-light text-lg lg:text-xl">
                 {servicio}
               </span>
             ))}
           </div>
         </div>
-        <div className="mt-8 border-b border-gray-600"></div>
+        <div className="mt-8 " />
       </div>
     </section>
-  )
+  );
 }
+
+export default ServiciosSection;

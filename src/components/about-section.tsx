@@ -1,51 +1,56 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useState } from "react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function AboutSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  // 👇 Ahora awards usa imágenes
   const awards = [
     { id: 1, title: "Premio 1", image: "/uploads/Tu-San-Agustin-Home_62.webp" },
-    { id: 2, title: "Cert ISO", image: "/uploads/091a2262-95c1-4ae8-b6f6-c81d3d355212.webp" }
-  
-  ]
+    { id: 2, title: "Cert ISO", image: "/uploads/091a2262-95c1-4ae8-b6f6-c81d3d355212.webp" },
+  ];
 
-   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % awards.length)
-  }
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % awards.length);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + awards.length) % awards.length)
-  }
+    setCurrentSlide((prev) => (prev - 1 + awards.length) % awards.length);
+  };
 
   return (
     <section className="bg-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side */}
+          {/* Lado izquierdo */}
           <div className="space-y-6">
             <div className="flex justify-center lg:justify-start">
-              <div className="w-40 ">
-                <span className=""><img src="uploads/Tu-San-Agustin_Logo_verde-300x156.webp" alt="" /></span>
+              <div className="w-40">
+                <img
+                  src="uploads/Tu-San-Agustin_Logo_verde-300x156.webp"
+                  alt="Logo Tu San Agustín"
+                  loading="lazy"
+                />
               </div>
             </div>
+
             <div className="text-center lg:text-left">
-              <h2 className="text-4xl lg:text-5xl font-bold text-center">
-                <span className="text-teal-500  ">Conócenos</span>
+              <h2 className="text-4xl lg:text-5xl font-bold">
+                <span className="text-teal-500">Conócenos</span>
                 <br />
                 <span className="text-gray-700">¿Quiénes somos?</span>
               </h2>
             </div>
+
             <div className="bg-gray-50 p-6 rounded-lg">
               <p className="text-gray-600 text-lg leading-relaxed">
-                Somos Tu San Agustín, la empresa líder en operación de eventos. Con más de 35 años, ofrecemos
-                soluciones integrales y personalizadas para cualquier tipo de evento.
+                Somos Tu San Agustín, la empresa líder en operación de eventos. Con más de 35 años,
+                ofrecemos soluciones integrales y personalizadas para cualquier tipo de evento.
               </p>
             </div>
+
             <div className="flex justify-center lg:justify-start">
               <Button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-full text-lg">
                 Ver más
@@ -53,7 +58,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right side */}
+          {/* Lado derecho: carrusel */}
           <div className="space-y-8">
             <div className="text-center lg:text-left">
               <h3 className="text-2xl text-gray-600 mb-2">Premios y</h3>
@@ -70,7 +75,7 @@ export default function AboutSection() {
                   {awards.map((award) => (
                     <div key={award.id} className="w-full flex-shrink-0">
                       <div className="flex justify-center lg:justify-start">
-                        <div className="w-40 h-48   flex items-center justify-center">
+                        <div className="w-40 h-48 flex items-center justify-center">
                           <img
                             src={award.image}
                             alt={award.title}
@@ -84,7 +89,7 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              {/* Controls */}
+              {/* Controles */}
               <div className="flex justify-center lg:justify-start gap-4 mt-6">
                 <button
                   onClick={prevSlide}
@@ -102,7 +107,7 @@ export default function AboutSection() {
                 </button>
               </div>
 
-              {/* Indicators */}
+              {/* Indicadores */}
               <div className="flex justify-center lg:justify-start gap-2 mt-4">
                 {awards.map((_, index) => (
                   <button
@@ -120,5 +125,5 @@ export default function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

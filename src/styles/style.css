@@ -3821,12 +3821,6 @@ font-family: 'Poppins';
   align-items: center;
 }
 
-.btn-custom {
-  margin-top: 10px;
-  width: 90%;
-  max-width: 220px;
-  /* El resto de tus estilos de botón */
-}
 
 @media (max-width: 600px) {
   .btn-custom {
